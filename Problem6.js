@@ -1,18 +1,8 @@
-function sumOfSquares (acc, n, max) {
-    if (n > max) {
-        return acc;
-    }
-
-    return sumOfSquares(
-        acc + (n * n),
-        n + 1,
-        max
-    );
-}
-const kleinerGauss = n => (n + 1) * (n / 2)
+const sumOfSquares = (n) => ((2 * n) + 1) * (n + 1) * n / 6;
+const kleinerGauss = (n) => (n + 1) * (n / 2)
 
 const go = (n) => {
-    const x = sumOfSquares(0, 1, n);
+    const x = sumOfSquares(n);
     const y = kleinerGauss(n);
 
     return (y * y) - x;
